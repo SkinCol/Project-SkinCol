@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">HomeController</prop>
+                <prop key="indexCategoria.htm">CategoriaController</prop>
+                <prop key="agregarCategoria.htm">CategoriaController</prop>
+                <prop key="editarCategoria.htm">CategoriaController</prop>
+                <prop key="deleteCategoria.htm">CategoriaController</prop> 
+                         
+                <prop key="indexSkin.htm">SkinController</prop>
+                <prop key="agregarSkin.htm">SkinController</prop>
+                <prop key="editarSkin.htm">SkinController</prop>
+                <prop key="deleteSkin.htm">SkinController</prop>
+                
+                <prop key="indexProveedor.htm">ProveedorController</prop>
+                <prop key="agregarProveedor.htm">ProveedorController</prop>
+                <prop key="editarProveedor.htm">ProveedorController</prop>
+                <prop key="deleteProveedor.htm">ProveedorController</prop>
+                
+                <prop key="indexMaterial.htm">MaterialController</prop>
+                <prop key="agregarMaterial.htm">MaterialController</prop>
+                <prop key="editarMaterial.htm">MaterialController</prop>
+                <prop key="deleteMaterial.htm">MaterialController</prop>
+                
+                <prop key="indexFacInsumos.htm">FacInsumosController</prop>
+                <prop key="agregarFacInsumos.htm">FacInsumosController</prop>
+                <prop key="editarFacInsumos.htm">FacInsumosController</prop>
+                <prop key="deleteFacInsumos.htm">FacInsumosController</prop>
+                
+                <prop key="indexDepartamento.htm">DepartamentoController</prop>
+                <prop key="agregarDepartamento.htm">DepartamentoController</prop>
+                <prop key="editarDepartamento.htm">DepartamentoController</prop>
+                <prop key="deleteDepartamento.htm">DepartamentoController</prop>
+                
+                <prop key="indexCiudad.htm">CiudadController</prop>
+                <prop key="agregarCiudad.htm">CiudadController</prop>
+                <prop key="editarCiudad.htm">CiudadController</prop>
+                <prop key="deleteCiudad.htm">CiudadController</prop>
+                
+                <prop key="indexUsuario.htm">UsuarioController</prop>
+                <prop key="agregarUsuario.htm">UsuarioController</prop>
+                <prop key="editarUsuario.htm">UsuarioController</prop>
+                <prop key="deleteUsuario.htm">UsuarioController</prop>
+                
+                <prop key="indexDispositivo.htm">DispositivoController</prop>
+                <prop key="agregarDispositivo.htm">DispositivoController</prop>
+                <prop key="editarDispositivo.htm">DispositivoController</prop>
+                <prop key="deleteDispositivo.htm">DispositivoController</prop>
+
+                <prop key="indexSolicitud.htm">SolicitudController</prop>
+                <prop key="agregarSolicitud.htm">SolicitudController</prop>
+                <prop key="editarSolicitud.htm">SolicitudController</prop>
+                <prop key="deleteSolicitud.htm">SolicitudController</prop>
+                
+                <prop key="indexEnvio.htm">EnvioController</prop>
+                <prop key="agregarEnvio.htm">EnvioController</prop>
+                <prop key="editarEnvio.htm">EnvioController</prop>
+                <prop key="deleteEnvio.htm">EnvioController</prop>
+
+                <prop key="indexFactura.htm">FacturaController</prop>
+                <prop key="agregarFactura.htm">FacturaController</prop>
+                <prop key="editarFactura.htm">FacturaController</prop>
+                <prop key="deleteFactura.htm">FacturaController</prop>
+              
+                
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/" 
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    -->
+    <bean name="CategoriaController" class="Controller.CategoriaController"/>
+    <bean name="SkinController" class="Controller.SkinController"/>
+    <bean name="ProveedorController" class="Controller.ProveedorController"/>
+    <bean name="MaterialController" class="Controller.MaterialController"/>
+    <bean name="FacInsumosController" class="Controller.FacInsumosController"/>
+    <bean name="DepartamentoController" class="Controller.DepartamentoController"/>
+    <bean name="CiudadController" class="Controller.CiudadController"/>
+    <bean name="UsuarioController" class="Controller.UsuarioController"/>
+    <bean name="DispositivoController" class="Controller.DispositivoController"/>
+    <bean name="SolicitudController" class="Controller.SolicitudController"/>
+    <bean name="FacturaController" class="Controller.FacturaController"/>
+    <bean name="EnvioController" class="Controller.EnvioController"/>
+    <bean name="HomeController" class="Controller.HomeController"/>
+
+</beans>
