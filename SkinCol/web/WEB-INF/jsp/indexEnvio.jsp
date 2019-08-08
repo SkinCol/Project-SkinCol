@@ -131,7 +131,6 @@
                         <th>Usuario</th>
                         <th>Factura</th>
                         <th>Fecha</th>
-                        <th>Opciones</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -141,10 +140,6 @@
                         <td>${dato.Usuario}</td>
                         <td>${dato.Factura}</td>
                         <td>${dato.Fecha}</td>
-                        <td>
-                            <a href="editarEnvio.htm?IdEnvio=${dato.IdEnvio}" class="btn btn-warning">Editar</a>
-                            <a onclick="return confirm ('Esta seguro?');" href="deleteEnvio.htm?IdEnvio=${dato.IdEnvio}" class="btn btn-danger">Eiminar</a>
-                        </td>
                     </tr>
                 </c:forEach>
                   </tbody>

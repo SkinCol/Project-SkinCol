@@ -24,15 +24,4 @@ public class EnvioBL {
         envioDL.insertar(e);
     }
     
-    public List buscar (int IdEnvio){
-        return envioDL.buscar(IdEnvio);
-    }
-    
-    public void actualizar(Envio e){
-        envioDL.actualizar(e);
-    }
-    
-    public void eliminar(int IdEnvio){
-        envioDL.eliminar(IdEnvio);
-    }
 }

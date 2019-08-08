@@ -72,13 +72,9 @@
                 
                 <prop key="indexEnvio.htm">EnvioController</prop>
                 <prop key="agregarEnvio.htm">EnvioController</prop>
-                <prop key="editarEnvio.htm">EnvioController</prop>
-                <prop key="deleteEnvio.htm">EnvioController</prop>
 
                 <prop key="indexFactura.htm">FacturaController</prop>
-                <prop key="agregarFactura.htm">FacturaController</prop>
-                <prop key="editarFactura.htm">FacturaController</prop>
-                <prop key="deleteFactura.htm">FacturaController</prop>
+
               
                 
             </props>

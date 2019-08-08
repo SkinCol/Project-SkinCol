@@ -6,7 +6,7 @@
 package Business;
 
 import Data.FacturaDL;
-import Model.Factura;
+
 import java.util.List;
 
 /**
@@ -19,20 +19,5 @@ public class FacturaBL {
     public List listar(){
         return facturaDL.Listar();
     }
-    
-    public void insertar(Factura f){
-        facturaDL.insertar(f);
-    }
-    
-    public List buscar (int IdFactura){
-        return facturaDL.buscar(IdFactura);
-    }
-    
-    public void actualizar(Factura f){
-        facturaDL.actualizar(f);
-    }
-    
-    public void eliminar(int IdFactura){
-        facturaDL.eliminar(IdFactura);
-    }
+
 }

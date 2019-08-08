@@ -37,44 +37,4 @@ public class FacturaController {
         return mav;
     }
     
-    @RequestMapping(value = "agregarFactura.htm", method = RequestMethod.GET)
-    public ModelAndView Agregar(){
-        mav.addObject(new Factura());
-        datos=solicitudBL.listar();
-        mav.addObject("lista",datos);
-        mav.setViewName("agregaFactura");
-        return mav;
-    }
-    
-    @RequestMapping(value = "agregarFactura.htm", method = RequestMethod.POST)
-    public ModelAndView Agregar(Factura f){
-        facturaBL.insertar(f);
-        return new ModelAndView("redirect:/indexFactura.htm");
-    }
-    
-    @RequestMapping(value = "editarFactura.htm", method = RequestMethod.GET)
-    public ModelAndView Editar(HttpServletRequest request){
-        IdFactura = Integer.parseInt(request.getParameter("IdFactura"));
-        datos = facturaBL.buscar(IdFactura);
-        mav.addObject("lista", datos);
-        datos=solicitudBL.listar();
-        mav.addObject("listaS", datos);
-        datos=usuarioBL.listar();
-        mav.addObject("listaU", datos);
-        mav.setViewName("editarFactura");
-        return mav;
-    }
-    
-    @RequestMapping(value = "editarFactura.htm", method = RequestMethod.POST)
-    public ModelAndView Editar(Factura f){
-        facturaBL.actualizar(f);
-        return new ModelAndView ("redirect:/indexFactura.htm");
-    }
-    
-    @RequestMapping("deleteFactura.htm")
-    public ModelAndView Delete(HttpServletRequest  request){
-        IdFactura = Integer.parseInt(request.getParameter("IdFactura"));
-        facturaBL.eliminar(IdFactura);
-        return new ModelAndView("redirect:/indexFactura.htm");
-    }
 }

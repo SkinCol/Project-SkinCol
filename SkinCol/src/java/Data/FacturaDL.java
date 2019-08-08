@@ -25,25 +25,5 @@ public class FacturaDL {
         datos = jdbctemplate.queryForList(sql);
         return datos;        
     }
-    
-    public void insertar(Factura f){
-        String sql = "insert into factura (IdSolicitud, IdUser, Fecha) values (?, ?, ?)";
-        jdbctemplate.update(sql,f.getIdSolicitud(), f.getIdUser(), f.getFecha());
-    }
-    
-    public List buscar(int IdFactura){
-        String sql = "select * from factura where IdFactura="+IdFactura;
-        datos = this.jdbctemplate.queryForList(sql);
-        return datos;
-    }
-    
-    public void actualizar(Factura f){
-        String sql = "update factura set IdSolicitud=?, IdUser=?, Fecha=? where Idciudad=?";
-        jdbctemplate.update(sql,f.getIdSolicitud(), f.getIdUser(),f.getIdFactura());
-    }
-    
-    public void eliminar(int IdFactura){
-        String sql = "delete from ciudad where IdFactura =" + IdFactura;
-        this.jdbctemplate.update(sql);
-    }
+
 }

@@ -115,9 +115,7 @@
               <!-- Table  -->
               <div class="row justify-content-end">
                 <div class="col-md-12 ">
-                  <a class="btn btn-success" href="agregarFactura.htm">
-                    <i class="far fa-plus-square"></i> Agregar
-                  </a>
+
                 </div>
               </div>
 
@@ -131,7 +129,7 @@
                         <th>Solicitud</th>
                         <th>Usuario</th>
                         <th>Fecha</th>
-                        <th>Opciones</th>
+                       
                       </tr>
                     </thead>
                     <tbody>
@@ -141,10 +139,7 @@
                         <td>${dato.Solicitud}</td>
                         <td>${dato.Usuario}</td>
                         <td>${dato.Fecha}</td>
-                        <td>
-                            <a href="editarFactura.htm?IdFactura=${dato.IdFactura}" class="btn btn-warning">Editar</a>
-                            <a onclick="return confirm ('Esta seguro?');" href="deleteFactura.htm?IdFactura=${dato.IdFactura}" class="btn btn-danger">Eiminar</a>
-                        </td>
+                        
                     </tr>
                 </c:forEach>
                   </tbody>

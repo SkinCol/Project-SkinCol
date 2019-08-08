@@ -42,39 +42,16 @@ public class EnvioController {
         mav.addObject(new Envio());
         datos=facturaBL.listar();
         mav.addObject("lista",datos);
-        mav.setViewName("agregaEnvio");
+        datos=usuarioBL.listar();
+        mav.addObject("listau",datos);
+        mav.setViewName("agregarEnvio");
         return mav;
     }
     
     @RequestMapping(value = "agregarEnvio.htm", method = RequestMethod.POST)
     public ModelAndView Agregar(Envio e){
         envioBL.insertar(e);
-        return new ModelAndView("redirect:/indeEnvio.htm");
-    }
-    
-    @RequestMapping(value = "editarEnvio.htm", method = RequestMethod.GET)
-    public ModelAndView Editar(HttpServletRequest request){
-        IdEnvio = Integer.parseInt(request.getParameter("IdEnvio"));
-        datos = envioBL.buscar(IdEnvio);
-        mav.addObject("lista", datos);      
-        datos=usuarioBL.listar();
-        mav.addObject("listaU", datos);
-        datos=facturaBL.listar();
-        mav.addObject("listaD", datos);
-        mav.setViewName("editarFactura");
-        return mav;
-    }
-    
-    @RequestMapping(value = "editarEnvio.htm", method = RequestMethod.POST)
-    public ModelAndView Editar(Envio e){
-        envioBL.actualizar(e);
-        return new ModelAndView ("redirect:/indexFactura.htm");
-    }
-    
-    @RequestMapping("deleteEnvio.htm")
-    public ModelAndView Delete(HttpServletRequest  request){
-        IdEnvio = Integer.parseInt(request.getParameter("IdEnvio"));
-        envioBL.eliminar(IdEnvio);
         return new ModelAndView("redirect:/indexEnvio.htm");
     }
+    
 }
